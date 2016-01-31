@@ -21,19 +21,17 @@ class TwitterWrapper():
 		self.access_token_secret = access_token_secret
 		self.auth_obj = OAuth1(self.consumer_key, self.consumer_secret, self.access_token, self.access_token_secret)
 
-	def get(url):
+	def get(self, url):
 		"""
 		Returns Requests object from a get request
 		"""
 		return requests.get(url, auth=auth)
 
-	def search(query):
+	def search(self, query):
 		"""
 		Returns Requests object specifically for a search query
 		"""
 		return requests.get("https://api.twitter.com/1.1/search/tweets.json?q=" + query, auth=auth)
-
-
 
 
 
