@@ -25,13 +25,13 @@ class TwitterWrapper():
 		"""
 		Returns Requests object from a get request
 		"""
-		return requests.get(url, auth=auth)
+		return requests.get(url, auth=self.auth_obj)
 
 	def search(self, query):
 		"""
 		Returns Requests object specifically for a search query
 		"""
-		return requests.get("https://api.twitter.com/1.1/search/tweets.json?q=" + query, auth=auth)
+		return requests.get("https://api.twitter.com/1.1/search/tweets.json?q=" + query, auth=self.auth_obj)
 
 
 
